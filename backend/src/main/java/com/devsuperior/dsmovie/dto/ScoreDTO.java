@@ -10,11 +10,11 @@ public class ScoreDTO {
 
 	}
 
-	public long getMovieid() {
+	public long getMovieId() {
 		return movieid;
 	}
 
-	public void setMovieid(long movieid) {
+	public void setMovieId(long movieid) {
 		this.movieid = movieid;
 	}
 
