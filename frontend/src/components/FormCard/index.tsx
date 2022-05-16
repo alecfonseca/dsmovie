@@ -2,7 +2,7 @@ import './styles.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { Movie } from 'types/movie';
 import React, { useEffect, useState } from 'react';
-import axios, { Axios, AxiosRequestConfig } from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 import { BASE_URL } from 'utils/request';
 import { validateEmail } from 'utils/validate';
 
@@ -24,13 +24,14 @@ function FormCard( {movieId} : Props) {
     }, [movieId]);
     
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+
         event.preventDefault();
 
         const email = (event.target as any).email.value;
 
         const score = (event.target as any).score.value;
 
-        if (validateEmail(email)) {
+        if (!validateEmail(email)) {
             return;
         }
 
